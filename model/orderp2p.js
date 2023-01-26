@@ -1,0 +1,66 @@
+const mongoose = require('mongoose');
+const orderp2pSchema = new mongoose.Schema({
+    "userId":{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'p2p_user'
+    },
+    "orderType":{
+        type:String
+    },
+    "firstCurrency":{
+        type:String
+    },
+    "secondCurrency":{
+        type:String
+    },
+    "location":{
+        type:String
+    },
+    "marketPrice":{
+        type:Number
+    },
+    "marginPercentage":{
+        type:Number
+    },
+    "price":{
+        type:Number
+    },
+    "amount":{
+        type:Number
+    },
+    "minAmount":{
+        type:Number
+    },
+    "maxAmount":{
+        type:Number
+    },
+    "availableAmount":{
+        type:Number
+    },
+    "paymentMethod":{
+        type:Array
+    },
+    "paymentDetails":{
+        type:String
+    },
+    "remarks":{
+        type:String
+    },
+    "isKycNeed":{
+        type:Boolean,
+        default:false
+    },
+    "status":{
+        type:Number,
+        default:0 //0 - pending, 1-completed, 2-pending, 3- cancelled, 4- dispute
+    },
+    "orderid":{
+        type:String
+    },
+    "dateTime":{
+        type:Date,
+        default:Date.now
+    }
+})
+
+module.exports = orderp2pSchema;
